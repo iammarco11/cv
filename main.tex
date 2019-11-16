@@ -1,0 +1,81 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+\documentclass[10pt,a4paper]{altacv}
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm,footskip=2\baselineskip}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[default]{lato}
+
+\definecolor{Mulberry}{HTML}{72243D}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{Sepia}
+\colorlet{accent}{Mulberry}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\usepackage[colorlinks]{hyperref}
+
+\begin{document}
+
+\name{Akshay Praveen Nair}
+\tagline{Student at Amritapuri }
+\photo{3.0cm}{dp1}
+\personalinfo{%
+
+  \email{akshaypraveennair11@gmail.com }
+  \phone{9400502277}
+  \mailaddress{Elambilakkal(Hose),Calicut airport(Po),Kondotty, Malappuram }
+  \location{Kerala ,India}
+  \homepage{https://iammarco11.github.io/}
+  \twitter{@akshaay_11}
+  \github{github.com/iammarco11}
+}
+
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+
+\cvsection[page1sidebar]{Experience}
+
+\cvevent{amFOSS club}{Free and open source software contributor}{August 2019 -- Ongoing}{Kollam,Kerala}
+\begin{itemize}
+\item Worked on various languages like ruby, python, C++, Rustlang, GO and solved some tasks given by the club. \github{github.com/iammarco11/amfoss-tasks} 
+\item Still contributing to this community
+\end{itemize}
+
+\cvsection{Projects}
+
+\cvevent{Django}{Shopping cart}{}{}
+\begin{itemize}
+\item Details
+\end{itemize}
+
+
+
+\medskip
+
+\cvsection{A Day of My Life}
+
+
+\wheelchart{1.5cm}{0.5cm}{%
+  6/8em/accent!30/{amfoss club}, 
+  4/8em/accent!8/{Browsing},
+  3/7em/accent!8/Much needed sleep,
+  8/8em/accent!55/College,
+  2/10em/accent!10/Spending time with friends and family,
+  5/6em/accent!20/Studying
+}
+
+
+\end{document}
