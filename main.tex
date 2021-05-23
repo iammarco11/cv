@@ -1,82 +1,120 @@
-\PassOptionsToPackage{dvipsnames}{xcolor}
+%% start of file `new.tex'.
+%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
 
-\documentclass[10pt,a4paper]{altacv}
-\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm,footskip=2\baselineskip}
 
+\documentclass[11pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[default]{lato}
+% moderncv themes
+\moderncvstyle{classic}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\rmdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
 
-\definecolor{Mulberry}{HTML}{72243D}
-\definecolor{SlateGrey}{HTML}{2E2E2E}
-\definecolor{LightGrey}{HTML}{666666}
-\colorlet{heading}{Sepia}
-\colorlet{accent}{Mulberry}
-\colorlet{emphasis}{SlateGrey}
-\colorlet{body}{LightGrey}
+% character encoding
+%\usepackage[utf8]{inputenc}                  % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                         % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
 
-% Change the bullets for itemize and rating marker
-% for \cvskill if you want to
-\renewcommand{\itemmarker}{{\small\textbullet}}
-\renewcommand{\ratingmarker}{\faCircle}
-%% sample.bib contains your publications
-\addbibresource{sample.bib}
+% adjust the page margins
+\usepackage[scale=0.89]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}      % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
-\usepackage[colorlinks]{hyperref}
+% personal data
+\firstname{Akshay}
+\familyname{Praveen Nair}
 
+\address{Kochi, Kerala, India}
+\mobile{+91~94005 02277}
+\email{akshaypraveennair11@gmail.in}
+\homepage{www.akshaynair.tech}                    % optional, remove the line if not wanted
+%\extrainfo{additional information}            % optional, remove the line if not wanted
+%\photo[110pt][0.01pt]{picture.jpg}                  % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{Some quote (optional)}                 % optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
 \begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                     % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
 
-\name{Akshay Praveen Nair}
-\tagline{Student at Amritapuri }
-\photo{3.0cm}{dp1}
-\personalinfo{%
+\section{Area of Interest}
+Computer Networks, Data Science, Natural Language Processing, Image Processing, Open Source, Internet Architecture, Computer architecture, Neuroscience.
 
-  \email{akshaypraveennair11@gmail.com }
-  \phone{9400502277}
-  \mailaddress{House no GGRA A1 Green Garden Road, Seaport-airport road CSEZ kakkanad, Kochi, Kerala}
-  \location{Kerala ,India}
-  \homepage{https://iammarco11.github.io/}
-  \twitter{@akshaay\_11}
-  \github{github.com/iammarco11}
+\section{Education}
+\cventry{2019--2023}{Bachelor of Technology, Computer Science and Engineering}{}{Amrita Vishwa Vidyapeetham, Kollam, Kerala, India}{}{}{}
+\cventry{2017--2019}{12th Grade, Saraswathi Vidyanikethan}{}{Kochi, Kerala, India}{}{}{}
+\cventry{2016--2017}{10th Grade, Bhavan's Varuna Vidyalaya}{}{Kochi, Kerala, India}{}{}{}{}
+
+%\cvlistitem {\textbf{Research Interest Title 2} \\Description}
+%\cvlistitem {\textbf{Research Interest Title 3} \\Description}
+%\cvlistitem {\textbf{Research Interest Title 4} \\Description}
+
+%\section{Honors \& Awards}
+%\cvlistitem{Honor1 Description }
+%\cvlistitem{Honor2 Description }
+%\cvlistitem{Honor3 Description }
+%\cvlistitem{Honor4 Description }
+
+
+\section{Work Experiences}
+
+\cventry{Dec 2019- Feb 2020}{KDE SoK'20}{}{\textit{Developer Intern}, KDE}{}{
+\textbf{Supervised by}: Carl Schwan}
+\cvlistitem {Developed a completely new website for the KDE application called Umbrello as a part of the summer program of KDE for students. Successfully ported the previous PHP website to a modern Jekyll static website builder with Markdown supported blogs.
 }
 
-\begin{fullwidth}
-\makecvheader
-\end{fullwidth}
-
-
-\cvsection[page1sidebar]{Experience}
-
-\cvevent{amFOSS club}{Free and open source software contributor}{August 2019 -- Ongoing}{Kollam,Kerala}
-\begin{itemize}
-\item Worked on various languages like ruby, python, C++, Rustlang, GO and solved some tasks given by the club. \github{github.com/iammarco11/amfoss-tasks} 
-\item Still contributing to this community
-\end{itemize}
-
-\cvsection{Projects}
-
-\cvevent{Django}{Shopping cart}{}{}
-\begin{itemize}
-\item This project is basically a website where amfoss members can buy tshirts through gpay. They can create a user and login also.
-\github{github.com/iammarco11/amfoss\_tshirts}
-\end{itemize}
-
-
-
-\medskip
-
-\cvsection{A Day of My Life}
-
-
-\wheelchart{1.5cm}{0.5cm}{%
-  6/8em/accent!30/{amfoss club}, 
-  4/8em/accent!8/{Browsing},
-  3/7em/accent!8/Much needed sleep,
-  8/8em/accent!55/College,
-  2/10em/accent!10/Spending time with friends and family,
-  5/6em/accent!20/Studying
+\section{Open Source Involvement}
+\cventry{Jan 2021- Present}{OpenWorm Foundation(INCF)}{}{Developer}{}{Currently working for the 4D reconstruction of axolotl embryos early development stages. This will allow us to create an atlas of the embryo’s outer surface, which in some species (e.g. Axolotl) enables us to have a novel perspective on neural development. The source data consists of nine images per sample from different points of view, which will be projected onto the surface of a virtual sphere. This will allow us to view the surface either continuously or in a montaged fashion.
 }
+\cventry{Dec 2019- Present}{OpenStack}{}{Foundation memeber/ Contributor}{}{Active member, contributor and developer with OpenStack, a software platform for cloud computing, mostly
+deployed as infrastructure-as-a-service, whereby virtual servers and other resources are made available to customers.}
+\cventry{Nov 2019- Present}{KDE}{}{Developer}{}{Active member, contributor and developer with KDE, a global free software community that develops desktop applications and environments built on top of the Qt framework. Was mainly involved in contribution to the application called Kirogi and some websites of KDE}
+\cventry{July 2019- Present}{amFOSS}{}{Developer, Mentor}{}{amFOSS is a student community focused on contributing to Free and Open Source Software and mentoring students to achieve excellence, since 2006.}
 
+\section{Projects}
+\cventry{}{NaWaB}{}{Python Telegram Bot}{}{NaWaB is a bot which shares all sorts of information regarding Computer Networks scraping twitter content. It sends the tweets to the telegram user with view and retweet option. \textbf{Source Code:} https://github.com/Team-SYNACKd/NaWaB}
+\cventry{}{Raag}{}{Music player made using Flutter}{}{Raag is a music app made using Flutter framework which will let us download audio from youtube songs also lets us play songs from our own device and share playlists to other users. \textbf{Source Code:} https://github.com/raag-music/raag}
+\cventry{}{amFOSS.in}{}{Backend CMS using Django framework}{}{Worked on the backend code of CMS made using Django. Added events model and also integrated a Discord bot(Ch0wikidhar) using the REST API which would send messages to the desired group after fetching data from CMS. \textbf{Source Code:} https://github.com/amfoss/cms \textbf{Live at:} https://amfoss.in/}
+
+\section{Workshops/Sessions}
+\cventry{}{Introduction to intermediate git}{}{Amrita University, Amritapuri}{}{Took a session about different git commands and how to use them as a part of the Hacktoberfest 2020 to give them a head start in the open source world}
+
+\section{Conferences and Hackathons}
+\cvlistitem {Runners up in \textbf{Gov-TechThon 2020}, a virtual hackathon organized by IEEE in collaboration with National Informatics Centre(NIC-India), MeitY, Government of India and Oracle from 30th October 2020 to 1st November 2020.}
+\cvlistitem {\textbf{Devfolio InOut hackathon}, 27 November 2020 | Virtual Event.}
+\cvlistitem {\textbf{Akademy ’20 KDE}, Invited Attendee, September 2020 | Virtual Event.}
+\cvlistitem {\textbf{conf.KDE.in ’20}, Invited Speaker, January 2020 | Maharaja Agrasen Institute of Technology, Delhi, India.}
+
+\section{Technical Skills}
+\cvlistitem {\textbf{Programming skills:} Proficient in C, C++, Java, Python.}
+\cvlistitem {\textbf{FrameWorks:} Qt, Django, Bootstrap, Flutter, ReactJs.}
+\cvlistitem {\textbf{Platforms:} Windows, GNU/Linux.}
+\cvlistitem {\textbf{Web:} HTML, CSS, JavaScript, JQuery.}
+\cvlistitem {\textbf{Tools:} GIT, SVN, Mercurial, LATEX.}
+
+\section{Languages}
+\cvlistitem {English, Hindi, Malayalam}
+
+\section{References}
+\cvlistitem{\textbf{Vipin Pavithran} (vipinp@am.amrita.edu) \\ Assistant Professor of cybersecurity and networks, Amrita Vishwa Vidyapeetham, Kerala, India}
 
 \end{document}
+
+
+%% end of file `template.tex'.
+
+
